@@ -1,5 +1,5 @@
 {
-  "name": "next-javascript-starter",
+  "name": "next-javascript-solana-starter",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,17 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@solana/wallet-adapter-react": "^0.15.20",
-    "@solana/wallet-adapter-react-ui": "^0.9.18",
-    "@solana/wallet-adapter-wallets": "^0.19.1",
+    "@solana/wallet-adapter-react": "^0.15.24",
+    "@solana/wallet-adapter-react-ui": "^0.9.22",
+    "@solana/wallet-adapter-wallets": "^0.19.5",
     "@thirdweb-dev/react": "^3",
     "@thirdweb-dev/sdk": "^3",
-    "next": "^12.3.1",
-    "react": "^18.2.0",
+    "next": "^13",
+    "react": "^18.2",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "eslint": "^8.25.0",
-    "eslint-config-next": "^12.3.1"
+    "eslint": "^8.28.0",
+    "eslint-config-next": "^13.0.4"
   }
 }
