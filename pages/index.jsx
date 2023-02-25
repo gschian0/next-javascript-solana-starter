@@ -61,7 +61,7 @@ const Home = () => {
   // );
 
   return (
-    
+    <div className={styles.center}>
       <div className={styles.container}>
         <div className={styles.iconContainer}>
           <Image
@@ -112,17 +112,21 @@ const Home = () => {
             {prediction.output && (
               <div className={styles.imageWrapper}>
               <Image
-                fill
-                src={prediction.output[prediction.output.length - 1]}
-                alt="output"
-                sizes='50vw'
-                style={{ maxWidth: '75vw', maxHeight: '75vw' }}
-              />
+                    
+                    src={prediction.output[prediction.output.length - 1]}
+                    alt="output"
+                    sizes="100%"
+                    width="640"
+                    height="640"
+                    className="max-w-full h-auto mx-auto"
+                    style={{ maxWidth: '75vw', maxHeight: '75vw' }}
+                  />
               </div>
             )}  
             <p>status: {prediction.status}</p>
         </div>
       )}
+    </div>
     </div>
   );
 }

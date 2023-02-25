@@ -28,3 +28,75 @@
 .lightPurple {
   color: #e011a7;
 }
+
+.h1 {
+  font-size: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.explain {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form input {
+  width: 100%;
+  height: 3rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: 1.25rem;
+  background-color: #2E2E2E;
+  border: none;
+  color: #fff;
+}
+
+.form button {
+  width: 100%;
+  height: 3rem;
+  padding: 1rem;
+  font-size: 1.25rem;
+  background-color: #7621D6;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #4C1B9E;
+}
+
+.error {
+  color: red;
+  margin-bottom: 1rem;
+}
+
+.imageWrapper {
+  margin-top: 2rem;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.imageWrapper img {
+  max-width:75%;
+  max-height:75%;
+  border-radius: 0.5rem;
+}
+
+
+
+.status {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
