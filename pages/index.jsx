@@ -3,7 +3,8 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
 import Head from "next/head";
-
+import { useProgram, useMintNFT, useWallet } from "@thirdweb-dev/react/solana";
+import {Minter} from "./components/mint";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -52,6 +53,7 @@ const Home = () => {
       setPrediction(prediction);
     }
   };
+  
   // Here's how to get the thirdweb SDK instance
   // const sdk = useSDK();
   // Here's how to get a nft collection
@@ -81,9 +83,10 @@ const Home = () => {
             alt="sol"
           />
         </div>
-        <h1 className={styles.h1}>AI on the BLOCK</h1>
+        <h1 className={styles.h1}>AI on the BLOCKCHAIN</h1>
+        <h1 className={styles.h2}>Hanging Out</h1>
         <p className={styles.explain}>
-          Connect your Solana Wallet to generate and mint AI ART&rsquo;s brand new{" "}
+          Connect your Phantom Wallet to</p><code> generate and mint </code><p className={styles.explain}>AI&rsquo;s on {" "}
           <b>
             <a
               href="https://portal.thirdweb.com/solana"
@@ -104,7 +107,9 @@ const Home = () => {
       </p>
       <form className={styles.form} onSubmit={handleSubmit}>
         <input type="text" name="prompt" placeholder="Enter a prompt to display an image" />
-        <button type="submit">Go!</button>
+        <button type="submit">Generate NFT Image!</button>
+        <br></br>
+        <code>only .25 SOL</code>
       </form>
       {error && <div>{error}</div>}     
       {prediction && (
@@ -121,9 +126,12 @@ const Home = () => {
                     className="max-w-full h-auto mx-auto"
                     style={{ maxWidth: '75vw', maxHeight: '75vw' }}
                   />
+                   <Minter image={prediction.output[prediction.output.length - 1]} />
               </div>
+              
             )}  
             <p>status: {prediction.status}</p>
+           
         </div>
       )}
     </div>
