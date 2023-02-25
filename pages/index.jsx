@@ -64,10 +64,10 @@ const Home = () => {
     <div className={styles.center}>
       <div className={styles.container}>
         <div className={styles.iconContainer}>
-          <Image
-            src="/thirdweb.svg"
+          <Image   
+            src="/The_Sri_Yantra_in_diagrammatic_form.svg"
             height={75}
-            width={115}
+            width={150}
             style={{
               objectFit: "contain",
             }}
@@ -81,9 +81,9 @@ const Home = () => {
             alt="sol"
           />
         </div>
-        <h1 className={styles.h1}>Solana, meet thirdweb 👋</h1>
+        <h1 className={styles.h1}>AI on the BLOCK</h1>
         <p className={styles.explain}>
-          Explore what you can do with thirdweb&rsquo;s brand new{" "}
+          Connect your Solana Wallet to generate and mint AI ART&rsquo;s brand new{" "}
           <b>
             <a
               href="https://portal.thirdweb.com/solana"
