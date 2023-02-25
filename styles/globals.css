@@ -19,7 +19,8 @@ select {
 }
 
 :root {
-  --background-color: #1c1e21;
+  --background-color: linear-gradient(90deg, #FEB692 0%, #EA5455 100%);
+
   --white: #ffffff;
   --tw-color1: #a855f7;
   --tw-color1-hover: #9333ea;

@@ -3,7 +3,9 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
 import Head from "next/head";
-
+import { useProgram, useMintNFT, useWallet } from "@thirdweb-dev/react/solana";
+import {Minter} from "./components/mint";
+import {web3, connection} from "@solana/web3.js";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -52,6 +54,7 @@ const Home = () => {
       setPrediction(prediction);
     }
   };
+  
   // Here's how to get the thirdweb SDK instance
   // const sdk = useSDK();
   // Here's how to get a nft collection
@@ -64,26 +67,27 @@ const Home = () => {
     <div className={styles.center}>
       <div className={styles.container}>
         <div className={styles.iconContainer}>
-          <Image
-            src="/thirdweb.svg"
-            height={75}
-            width={115}
+          <Image   
+            src="/The_Sri_Yantra_in_diagrammatic_form.svg"
+            height={222}
+            width={222}
             style={{
               objectFit: "contain",
             }}
             alt="thirdweb"
           />
-          <Image
+          {/* <Image
             width={75}
             height={75}
             src="/sol.png"
             className={styles.icon}
             alt="sol"
-          />
+          /> */}
         </div>
-        <h1 className={styles.h1}>Solana, meet thirdweb 👋</h1>
+        <h1 className={styles.h1}>AI on the BLOCKCHAIN</h1>
+        <h1 className={styles.h2}>Hanging Out</h1>
         <p className={styles.explain}>
-          Explore what you can do with thirdweb&rsquo;s brand new{" "}
+          Connect your Phantom Wallet to</p><code> generate and mint </code><p className={styles.explain}>AI&rsquo;s on {" "}
           <b>
             <a
               href="https://portal.thirdweb.com/solana"
@@ -104,7 +108,9 @@ const Home = () => {
       </p>
       <form className={styles.form} onSubmit={handleSubmit}>
         <input type="text" name="prompt" placeholder="Enter a prompt to display an image" />
-        <button type="submit">Go!</button>
+        <button type="submit">Generate NFT Image!</button>
+        <br></br>
+        <code>only .25 SOL</code>
       </form>
       {error && <div>{error}</div>}     
       {prediction && (
@@ -121,9 +127,14 @@ const Home = () => {
                     className="max-w-full h-auto mx-auto"
                     style={{ maxWidth: '75vw', maxHeight: '75vw' }}
                   />
+                  <br></br>
+                  <br></br>
+                   <Minter image={prediction.output[prediction.output.length - 1]} />
               </div>
+              
             )}  
             <p>status: {prediction.status}</p>
+           
         </div>
       )}
     </div>
