@@ -2,7 +2,7 @@ import { useProgram, useMintNFT } from "@thirdweb-dev/react/solana";
 import { useWallet } from "@solana/wallet-adapter-react";
 import styles from "../../styles/Home.module.css";
 
-export function Minter({ image, nftName, nftSymbol }) {
+export default function Minter({ image, nftName, nftSymbol }) {
   const { wallet } = useWallet();
   const { program } = useProgram("6xTpesyYWUT5Xt9m4nw5AXncQLmnT2WXb2pcyrDDNaEg", "nft-collection")
   const { mutateAsync: mintNFT, isLoading, error } = useMintNFT(program);
