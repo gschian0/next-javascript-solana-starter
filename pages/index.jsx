@@ -5,6 +5,7 @@ import { useState } from "react";
 import Head from "next/head";
 import { useProgram, useMintNFT, useWallet } from "@thirdweb-dev/react/solana";
 import {Minter} from "./components/mint";
+import {web3, connection} from "@solana/web3.js";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -68,20 +69,20 @@ const Home = () => {
         <div className={styles.iconContainer}>
           <Image   
             src="/The_Sri_Yantra_in_diagrammatic_form.svg"
-            height={75}
-            width={150}
+            height={222}
+            width={222}
             style={{
               objectFit: "contain",
             }}
             alt="thirdweb"
           />
-          <Image
+          {/* <Image
             width={75}
             height={75}
             src="/sol.png"
             className={styles.icon}
             alt="sol"
-          />
+          /> */}
         </div>
         <h1 className={styles.h1}>AI on the BLOCKCHAIN</h1>
         <h1 className={styles.h2}>Hanging Out</h1>
@@ -126,6 +127,8 @@ const Home = () => {
                     className="max-w-full h-auto mx-auto"
                     style={{ maxWidth: '75vw', maxHeight: '75vw' }}
                   />
+                  <br></br>
+                  <br></br>
                    <Minter image={prediction.output[prediction.output.length - 1]} />
               </div>
               

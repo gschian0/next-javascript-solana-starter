@@ -1,9 +1,10 @@
 import { useProgram, useMintNFT } from "@thirdweb-dev/react/solana";
 import { useWallet } from "@solana/wallet-adapter-react";
+import styles from "../../styles/Home.module.css";
 
 export function Minter({ image, nftName, nftSymbol }) {
   const { wallet } = useWallet();
-  const { program } = useProgram("6xTpesyYWUT5Xt9m4nw5AXncQLmnT2WXb2pcyrDDNaEg");
+  const { program } = useProgram("6xTpesyYWUT5Xt9m4nw5AXncQLmnT2WXb2pcyrDDNaEg", "nft-collection")
   const { mutateAsync: mintNFT, isLoading, error } = useMintNFT(program);
 
   const handleClick = async () => {
@@ -28,7 +29,7 @@ export function Minter({ image, nftName, nftSymbol }) {
   };
 
   return (
-    <button onClick={handleClick} disabled={isLoading}>
+    <button className={styles.form} onClick={handleClick} disabled={isLoading}>
       {isLoading ? "Minting..." : "Mint NFT"}
     </button>
   );
