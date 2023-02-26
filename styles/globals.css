@@ -1,5 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
 /* Box sizing rules */
 *,
 *::before,
@@ -25,10 +28,12 @@ select {
   --tw-color1: #a855f7;
   --tw-color1-hover: #9333ea;
 }
-
+footer {
+  filter: blur(0.5px);
+}
 body {
   background: var(--background-color);
-  font-family: "Inter", sans-serif;
+  font-family: 'Tilt Neon', cursive;
   color: var(--white);
   display: flex;
   margin: 0;
