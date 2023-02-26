@@ -138,6 +138,7 @@ const Home = () => {
         </div>
       )}
     </div>
+    <footer className="text-xl">zen man 2023</footer>
     </div>
   );
 }
